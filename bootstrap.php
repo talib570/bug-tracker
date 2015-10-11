@@ -8,7 +8,8 @@ require_once "vendor/autoload.php";
 
 // Create a simple "default" Doctrine ORM configuration for Annotations
 $isDevMode = true;
-// or if you prefer yaml or XML
+
+// metadata configuration using yaml
 $config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
 
 /**
