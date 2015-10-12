@@ -211,4 +211,12 @@ class Bug
     {
         $this->products[] = $product;
     }
+
+    /**
+     * Updates status to close
+     */
+    public function close()
+    {
+        $this->status = "CLOSE";
+    }
 }
