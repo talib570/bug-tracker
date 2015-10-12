@@ -35,7 +35,7 @@ class Bug
     /**
      * @ManyToMany(targetEntity="Product")
      **/
-    protected $products;
+    protected $products = null;
     /**
      * Constructor
      */
@@ -47,7 +47,7 @@ class Bug
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -70,7 +70,7 @@ class Bug
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -93,7 +93,7 @@ class Bug
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreated()
     {
@@ -116,7 +116,7 @@ class Bug
     /**
      * Get status
      *
-     * @return string 
+     * @return string
      */
     public function getStatus()
     {
@@ -139,7 +139,7 @@ class Bug
     /**
      * Get engineer
      *
-     * @return \User 
+     * @return \User
      */
     public function getEngineer()
     {
@@ -162,7 +162,7 @@ class Bug
     /**
      * Get reporter
      *
-     * @return \User 
+     * @return \User
      */
     public function getReporter()
     {
@@ -195,10 +195,20 @@ class Bug
     /**
      * Get products
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getProducts()
     {
         return $this->products;
+    }
+
+    /**
+     * Assigns to products
+     *
+     * @param \Product $products
+     */
+    public function assignToProduct(\Product $product)
+    {
+        $this->products[] = $product;
     }
 }

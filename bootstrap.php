@@ -4,6 +4,11 @@ use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 use Doctrine\DBAL\DriverManager;
 
+/* The Default time zone is Asia/Karachi
+  which is UTC+5.
+*/
+date_default_timezone_set('Asia/Karachi');
+
 require_once "vendor/autoload.php";
 
 // Create a simple "default" Doctrine ORM configuration for Annotations

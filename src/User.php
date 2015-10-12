@@ -40,7 +40,7 @@ class User
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -63,7 +63,7 @@ class User
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -96,7 +96,7 @@ class User
     /**
      * Get reportedBugs
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getReportedBugs()
     {
@@ -129,10 +129,21 @@ class User
     /**
      * Get assignedBugs
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getAssignedBugs()
     {
         return $this->assignedBugs;
+    }
+
+
+    /**
+     * Adds bug in assignedBugs ArrayCollection
+     *
+     * @param \Bug $bug
+     */
+    public function assignedToBug(\Bug $bug)
+    {
+        $this->assignedBugs[] = $bug;
     }
 }
