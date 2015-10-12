@@ -1,6 +1,7 @@
 <?php
 // src/Bug.php
 /**
+ * @Entity(repositoryClass="BugRepository")
  * @Entity @Table(name="bugs")
  **/
 class Bug
